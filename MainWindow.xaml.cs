@@ -24,5 +24,10 @@ namespace Tetris
         {
             InitializeComponent();
         }
+
+        private void GameCanvas_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
