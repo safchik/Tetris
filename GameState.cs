@@ -103,7 +103,7 @@ namespace Tetris
             }
         }
 
-        private void MoveBlockDown()
+        public void MoveBlockDown()
         {
             CurrentBlock.Move(1, 0);
 
