@@ -17,7 +17,7 @@ namespace Tetris
         {
             Rows = rows;
             Columns = columns;
-            grid = new int[Rows, Columns];
+            grid = new int[rows, columns];
         }
 
         private bool IsInside(int r, int c)
@@ -30,7 +30,7 @@ namespace Tetris
             return IsInside(r, c) && grid[r, c] == 0;
         }
 
-        public bool IsFull(int r)
+        public bool IsRowFull(int r)
         {
             for (int c = 0; c < Columns; c++)
             {
