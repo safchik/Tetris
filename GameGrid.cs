@@ -1,12 +1,11 @@
-﻿
-
-namespace Tetris
+﻿namespace Tetris
 {
     public class GameGrid
     {
         private readonly int[,] grid;
         public int Rows { get; }
         public int Columns { get; }
+
         public int this[int r, int c]
         {
             get => grid[r, c];
@@ -20,9 +19,9 @@ namespace Tetris
             grid = new int[rows, columns];
         }
 
-        private bool IsInside(int r, int c)
+        public bool IsInside(int r, int c)
         {
-            return r>= 0 && r < Rows && c >= 0 && c< Columns;
+            return r >= 0 && r < Rows && c >= 0 && c < Columns;
         }
 
         public bool IsEmpty(int r, int c)
@@ -39,6 +38,7 @@ namespace Tetris
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -51,8 +51,9 @@ namespace Tetris
                     return false;
                 }
             }
+
             return true;
-        } 
+        }
 
         private void ClearRow(int r)
         {
@@ -77,7 +78,7 @@ namespace Tetris
 
             for (int r = Rows - 1; r >= 0; r--)
             {
-                if (IsRowEmpty(r))
+                if (IsRowFull(r))
                 {
                     ClearRow(r);
                     cleared++;
@@ -87,6 +88,7 @@ namespace Tetris
                     MoveRowDown(r, cleared);
                 }
             }
+
             return cleared;
         }
     }
